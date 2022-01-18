@@ -1,14 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-
 import 'assets/styles/custom.scss';
 import './App.css';
+import Routes from 'Routes';
 
 function App() {
   return (
-    <div className="App">
-      <h1>MovieFlix</h1>
-    </div>
+    <Routes />
   );
 }
 
