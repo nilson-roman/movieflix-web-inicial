@@ -1,5 +1,6 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from 'components/Navbar';
+import Home from 'pages/Home/Auth';
 
 const Routes = () => {
   return (
@@ -7,7 +8,7 @@ const Routes = () => {
       <Navbar />
       <Switch>
           <Route path="/" exact>
-            <h1>MovieFlix</h1>
+            <Home />
           </Route>
       </Switch>
     </BrowserRouter>
