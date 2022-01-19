@@ -55,7 +55,7 @@ const Login = () => {
           />
           <div className="invalid-feedback d-block">{errors.password?.message}</div>
         </div>
-        <div className="login-submit mb-2">
+        <div className="login-submit">
           <Button text="Fazer login" />
         </div>
       </form>

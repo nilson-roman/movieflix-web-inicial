@@ -1,0 +1,12 @@
+.movie-container {
+    margin: 15px;
+}
+
+.movie-list-container {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-list-item-container {
+    margin-top: 50px;
+}
