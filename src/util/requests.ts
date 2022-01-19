@@ -19,7 +19,7 @@ export const requestBackendLogin = (loginData: LoginData) => {
     'Content-Type': 'application/x-www-form-urlencoded',
     Authorization: 'Basic ' + window.btoa(CLIENT_ID + ':' + CLIENT_SECRET),
   };
-
+  
   const data = qs.stringify({
     ...loginData,
     grant_type: 'password',

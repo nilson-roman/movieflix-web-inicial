@@ -9,8 +9,8 @@ const Routes = () => {
       <Navbar />
       <Switch>
           <Route path="/" exact>
-            {/* <Home /> */}
-            <Catalog />
+            <Home />
+            {/* <Catalog /> */}
           </Route>
       </Switch>
     </BrowserRouter>
