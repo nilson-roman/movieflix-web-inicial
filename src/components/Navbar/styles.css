@@ -1,21 +1,33 @@
 .main-nav {
-    padding-left: 40px;
-    min-height: 70px;
+  padding-left: 40px;
+  min-height: 70px;
 }
 
-.nav-logo-text, .nav-logo-text:hover {
-    color: #000000;
+.nav-logo-text,
+.nav-logo-text:hover {
+  color: #000000;
 }
 
 .main-menu {
-    display: flex;
-    font-size: 18px;
-    width: 380px;
-    justify-content: space-between;
+  display: flex;
+  font-size: 18px;
+  width: 380px;
+  justify-content: space-between;
 }
 
 .nav-login-logout {
-    width: 100px;
-    border: 2px solid black;
-    border-radius: 5px;
+  display: flex;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.button-logout {
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+
+a:hover {
+  color: black;
 }

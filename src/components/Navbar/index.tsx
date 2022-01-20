@@ -5,11 +5,9 @@ import { getTokenData, isAuthenticated } from "util/auth";
 import { removeAuthData } from "util/storage";
 import history from "util/history";
 
-
 import "./styles.css";
 import "bootstrap/js/src/collapse.js";
 const Navbar = () => {
-
   const { authContextData, setAuthContextData } = useContext(AuthContext);
 
   useEffect(() => {
@@ -31,7 +29,7 @@ const Navbar = () => {
     setAuthContextData({
       authenticated: false,
     });
-    history.replace('/');
+    history.replace("/");
   };
 
   return (
@@ -40,15 +38,15 @@ const Navbar = () => {
         <Link to="/" className="nav-logo-text">
           <h4>MovieFlix</h4>
         </Link>
-          {authContextData.authenticated ? (
-            <div className="nav-login-logout">
-              <a href="#logout" onClick={handleLogoutClick}>
-                Sair
-              </a>
-            </div>
-          ) : (
-            <Link to="/"></Link>
-          )}
+        {authContextData.authenticated ? (
+          <div className="nav-login-logout">
+            <a href="#logout" className="button-logout" onClick={handleLogoutClick}>
+              Sair
+            </a>
+          </div>
+        ) : (
+          <Link to="/"></Link>
+        )}
       </div>
     </nav>
   );
