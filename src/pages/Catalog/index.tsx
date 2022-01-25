@@ -7,8 +7,8 @@ const Catalog = () => {
                 <h4>Tela de listagem de filmes</h4>
             </div>
             <div className="movie-list-item-container">
-                <p>Acessar /movies/1</p>
-                <p>Acessar /movies/2</p>
+                <p>Acessar <a href="/movies/1">/movies/1</a></p>
+                <p>Acessar <a href="/movies/2">/movies/2</a></p>
             </div>
         </div>
     )

@@ -1,9 +1,10 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Movie } from "types/movies";
+import{ AxiosRequestConfig } from 'axios';
+import { requestBackend } from 'util/requests';
+
 import "./styles.css";
-import axios from 'axios';
-import { BASE_URL } from 'util/requests';
 
 type UrlParams = {
   movieId: string;
@@ -15,11 +16,14 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
-    axios
-      .get(`${BASE_URL}/movies/${movieId}`)
-      .then((response) => {
-        setMovie(response.data);
-      })
+    const params : AxiosRequestConfig = {
+      url: `/movies/${movieId}`,
+      withCredentials: true,
+    };
+ 
+    requestBackend(params).then((response) => {
+      setMovie(response.data);
+    });
   }, [movieId]);
   
 

@@ -14,10 +14,10 @@ const Routes = () => {
         <Route path="/" exact>
           <Home />
         </Route>
-        <PrivateRoute path="/movies">
+        <PrivateRoute path="/movies" exact={true}>
           <Catalog />
         </PrivateRoute>
-        <PrivateRoute path="/movies/:movieId">
+        <PrivateRoute path="/movies/:movieId" exact={false}>
           <MovieDetails />
         </PrivateRoute>
       </Switch>
