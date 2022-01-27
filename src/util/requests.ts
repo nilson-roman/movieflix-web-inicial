@@ -14,6 +14,11 @@ type LoginData = {
   password: string;
 };
 
+type ReviewData = {
+  text: string;
+  movieId: string;
+};
+
 export const requestBackendLogin = (loginData: LoginData) => {
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
@@ -29,6 +34,23 @@ export const requestBackendLogin = (loginData: LoginData) => {
     method: 'POST',
     baseURL: BASE_URL,
     url: '/oauth/token',
+    data,
+    headers,
+  });
+};
+
+export const requestBackendPost = (reviewData: ReviewData) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer ' + getAuthData().access_token,
+  };
+
+  const data = reviewData
+
+  return axios({
+    method: 'POST',
+    baseURL: BASE_URL,
+    url: '/reviews',
     data,
     headers,
   });
