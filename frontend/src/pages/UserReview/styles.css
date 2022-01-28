@@ -1,0 +1,16 @@
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-name-container {
+  margin-left: 20px;
+}
+
+.review-container {
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 20px;
+}

@@ -1,0 +1,11 @@
+.movie-container {
+    margin: 30px;
+}
+
+.movie-list-container {
+    display: flex;
+}
+
+.movie-list-item-container {
+    margin-top: 50px;
+}
