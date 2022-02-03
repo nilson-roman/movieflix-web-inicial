@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Review } from "types/review";
 import { AxiosRequestConfig } from "axios";
 import { requestBackend } from "util/requests";
@@ -18,7 +18,7 @@ const MovieDetails = () => {
 
   const [reviews, setReviews] = useState<Review[]>();
 
-  useEffect(() => {
+  const getMovieReviews = useCallback( () => {
     const params: AxiosRequestConfig = {
       url: `/movies/${movieId}/reviews`,
       withCredentials: true,
@@ -27,7 +27,11 @@ const MovieDetails = () => {
     requestBackend(params).then((response) => {
       setReviews(response.data);
     });
-  }, [movieId]);
+  }, [movieId])
+
+  useEffect(() => {
+    getMovieReviews();
+  }, [getMovieReviews]);
 
   return (
     <div className="movie-container">
@@ -35,7 +39,7 @@ const MovieDetails = () => {
         <h4>Tela de listagem de filmes id:{movieId}</h4>
       </div>
 
-      {hasAnyRoles(["ROLE_MEMBER"]) && <PostReview movieId={movieId} />}
+      {hasAnyRoles(["ROLE_MEMBER"]) && <PostReview movieId={movieId} onSubmitForm={() => getMovieReviews()} />}
 
       {reviews && (
         <div className="base-card review-card mt-5">

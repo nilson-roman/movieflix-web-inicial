@@ -7,6 +7,7 @@ import "./styles.css";
 
 type Props = {
   movieId: string;
+  onSubmitForm: Function;
 };
 
 type FormData = {
@@ -14,7 +15,7 @@ type FormData = {
   movieId: string;
 };
 
-const PostReview = ({ movieId }: Props) => {
+const PostReview = ({ movieId, onSubmitForm }: Props) => {
 
   const [hasError, setHasError] = useState(false);
 
@@ -25,16 +26,23 @@ const PostReview = ({ movieId }: Props) => {
     setValue
   } = useForm<FormData>();
   
+  const clearForm = () => {
+    setValue('text', "");
+  }
 
   const onSubmit = (formData: FormData) => {
     requestBackendPost(formData)
       .then((response) => {
         setHasError(false);
-        window.location.reload();
+        clearForm();
+        onSubmitForm();
+        alert("Avaliação enviado com sucesso!")
       })
       .catch((error) => {
         setHasError(true);
+        clearForm();
         console.log("ERRO", error);
+        alert("Erro ao enviar a avaliação!")
       });
   };
 
