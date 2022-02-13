@@ -1,0 +1,28 @@
+.container-movie {
+  height: 322px;
+  margin-bottom: 20px;
+}
+
+.container-movie-image {
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+.container-movie-image,
+img {
+  max-width: 100%;
+}
+
+.container-movie-title {
+  padding: 0 20px;
+}
+
+.container-movie-year {
+  padding: 0 20px;
+  color: #ffc700;
+}
+
+.container-movie-subtitle {
+  padding: 0 20px;
+  font-size: 12px;
+}
