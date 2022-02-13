@@ -1,6 +1,9 @@
 .container-movie {
-  height: 322px;
   margin-bottom: 20px;
+}
+
+.container-movie-details {
+  padding: 20px;
 }
 
 .container-movie-image {
@@ -14,15 +17,24 @@ img {
 }
 
 .container-movie-title {
-  padding: 0 20px;
+  padding: 0;
 }
 
 .container-movie-year {
-  padding: 0 20px;
+  padding: 0;
   color: #ffc700;
 }
 
 .container-movie-subtitle {
-  padding: 0 20px;
+  padding: 0;
   font-size: 12px;
+}
+
+.container-movie-synopsis {
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #9E9E9E;
+  padding: 15px 10px;
 }

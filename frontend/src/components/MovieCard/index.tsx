@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Movie } from "types/movies";
 
 import "./styles.css";
@@ -11,11 +12,26 @@ const MovieCard = ({ movie }: Props) => {
     <div className="base-card">
       <div className="container-movie">
         <div className="container-movie-image">
-          <img src={movie.imgUrl} alt={movie?.title} height="165" />
+          <Link to={"/movies/" + movie.id}>
+            <img src={movie.imgUrl} alt={movie?.title} height="165" />
+          </Link>
         </div>
-        <div className="container-movie-title"><h5>{movie?.title}</h5></div>
-        <div className="container-movie-year"><h6>{movie?.year}</h6></div>
-        <div className="container-movie-subtitle"><p>{movie?.subTitle}</p></div>
+        <div className="container-movie-details">
+          <div className="container-movie-title">
+            <h5>{movie?.title}</h5>
+          </div>
+          <div className="container-movie-year">
+            <h6>{movie?.year}</h6>
+          </div>
+          <div className="container-movie-subtitle">
+            <p>{movie?.subTitle}</p>
+          </div>
+          {movie?.synopsis && (
+            <div className="container-movie-synopsis">
+              <p>{movie?.synopsis}</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

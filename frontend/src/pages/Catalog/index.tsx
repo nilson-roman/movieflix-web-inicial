@@ -11,10 +11,6 @@ const Catalog = () => {
             <div>
                 <List />
             </div>
-            <div className="movie-list-item-container">
-                <p>Acessar <a href="/movies/1">/movies/1</a></p>
-                <p>Acessar <a href="/movies/2">/movies/2</a></p>
-            </div>
         </div>
     )
 }

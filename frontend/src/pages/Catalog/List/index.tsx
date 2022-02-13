@@ -41,7 +41,7 @@ const List = () => {
       withCredentials: true,
       params: {
         page: controlComponentsData.activePage,
-        size: 3,
+        size: 4,
         genreId: controlComponentsData.filterData.genre?.id,
       },
     };
