@@ -1,10 +1,15 @@
+import List from './List';
+import MovieFilter from './MovieFilter';
 import './styles.css'
 
 const Catalog = () => {
     return (
         <div className="movie-container">
+            <div className="base-card filter-card">
+                <MovieFilter onSubmitFilter={() => {}} />
+            </div>
             <div className="movie-list-container">
-                <h4>Tela de listagem de filmes</h4>
+                <List />
             </div>
             <div className="movie-list-item-container">
                 <p>Acessar <a href="/movies/1">/movies/1</a></p>

@@ -1,8 +1,8 @@
-.movie-container {
+.movie-details-container {
   margin: 30px;
 }
 
-.movie-details-container {
+.movie-details-item-container {
   display: flex;
   justify-content: center;
 }

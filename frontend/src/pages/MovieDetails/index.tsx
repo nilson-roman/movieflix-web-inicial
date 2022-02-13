@@ -34,8 +34,8 @@ const MovieDetails = () => {
   }, [getMovieReviews]);
 
   return (
-    <div className="movie-container">
-      <div className="movie-details-container mb-2">
+    <div className="movie-details-container">
+      <div className="movie-details-item-container mb-2">
         <h4>Tela de listagem de filmes id:{movieId}</h4>
       </div>
 
