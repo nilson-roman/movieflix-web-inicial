@@ -8,7 +8,7 @@ const Catalog = () => {
             <div className="base-card filter-card">
                 <MovieFilter onSubmitFilter={() => {}} />
             </div>
-            <div className="movie-list-container">
+            <div className="base-card movie-list-container">
                 <List />
             </div>
             <div className="movie-list-item-container">

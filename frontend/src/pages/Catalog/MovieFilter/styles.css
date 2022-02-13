@@ -1,0 +1,60 @@
+.product-filter-select__control {
+  background-color: #6c6c6c !important;
+}
+
+.product-filter-select__control:base {
+  display: none;
+}
+
+.product-filter-select__menu {
+  background-color: #6c6c6c !important;
+}
+
+.product-filter-select__single-value {
+  color: #ffffff !important;
+}
+
+.product-filter-select__placeholder {
+  color: #ffffff !important;
+}
+
+.product-filter-select__indicator-separator {
+  display: none;
+}
+
+/* option menu focus class */
+.css-1n7v3ny-option {
+  background-color: #505050 !important;
+}
+
+/* select focus */
+.css-1gtu0rj-indicatorContainer {
+  color: #9e9e9e !important;
+}
+
+.css-1gtu0rj-indicatorContainer:hover {
+  color: #9e9e9e !important;
+}
+
+.css-tlfecz-indicatorContainer {
+  color: #9e9e9e !important;
+}
+
+.css-tlfecz-indicatorContainer {
+  color: #9e9e9e !important;
+}
+
+.css-1pahdxg-control {
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.css-1s2u09g-control {
+  border-color: #ffffff !important;
+}
+
+/* selected option background-color */
+.css-9gakcf-option{
+background-color: #FFC700 !important;
+color: black;
+}
