@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from "axios";
 import MovieCard from "components/MovieCard";
+import Pagination from "components/Pagination";
 import { useCallback, useEffect, useState } from "react";
 import { Movie } from "types/movies";
 import { SpringPage } from "types/spring";
@@ -55,13 +56,21 @@ const List = () => {
   }, [getMovies]);
 
   return (
-    <div>
-      {page?.content.map((movie) => (
-        <div key={movie.id}>
-          <MovieCard movie={movie} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div>
+        {page?.content.map((movie) => (
+          <div key={movie.id}>
+            <MovieCard movie={movie} />
+          </div>
+        ))}
+      </div>
+      <Pagination
+        forcePage={page?.number}
+        pageCount={page ? page.totalPages : 0}
+        range={3}
+        onChange={handlePageChange}
+      />
+    </>
   );
 };
 
