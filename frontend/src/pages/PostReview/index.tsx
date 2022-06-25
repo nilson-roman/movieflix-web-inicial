@@ -4,6 +4,7 @@ import Button from "components/Button";
 import { requestBackendPost } from "util/requests";
 
 import "./styles.css";
+import { toast } from "react-toastify";
 
 type Props = {
   movieId: string;
@@ -36,13 +37,13 @@ const PostReview = ({ movieId, onSubmitForm }: Props) => {
         setHasError(false);
         clearForm();
         onSubmitForm();
-        alert("Avaliação enviado com sucesso!")
+        toast.info("Avaliação enviada com sucesso!")
       })
       .catch((error) => {
         setHasError(true);
         clearForm();
         console.log("ERRO", error);
-        alert("Erro ao enviar a avaliação!")
+        toast.error("Erro ao enviar a avaliação!")
       });
   };
 

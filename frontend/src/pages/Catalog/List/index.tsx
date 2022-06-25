@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Movie } from "types/movies";
 import { SpringPage } from "types/spring";
 import { requestBackend } from "util/requests";
-import { GenreFilterData } from "../MovieFilter";
+import MovieFilter, { GenreFilterData } from "../MovieFilter";
 
 import "./styles.css";
 
@@ -20,7 +20,7 @@ const List = () => {
   const [controlComponentsData, setControlComponentsData] =
     useState<ControlComponentsData>({
       activePage: 0,
-      filterData: { name: "", genre: null },
+      filterData: { genre: null },
     });
 
   const handlePageChange = (pageNumber: number) => {
@@ -57,6 +57,9 @@ const List = () => {
 
   return (
     <>
+      <div className="base-card filter-card">
+          <MovieFilter onSubmitFilter={handleSubmitFilter} />
+      </div>
       <div>
         {page?.content.map((movie) => (
           <div key={movie.id}>

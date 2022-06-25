@@ -8,7 +8,6 @@ import "./styles.css";
 import { AxiosRequestConfig } from "axios";
 
 export type GenreFilterData = {
-  name: string;
   genre: Genre | null;
 };
 
@@ -23,19 +22,16 @@ const MovieFilter = ({ onSubmitFilter }: Props) => {
     useForm<GenreFilterData>();
 
   const onSubmit = (formData: GenreFilterData) => {
-    // onSubmitFilter(formData);
-    console.log(formData);
+    onSubmitFilter(formData);
   };
 
   const handleChangeGenre = (value: Genre) => {
     setValue("genre", value);
 
     const obj: GenreFilterData = {
-      name: getValues("name"),
       genre: getValues("genre"),
     };
 
-    console.log(value);
     onSubmitFilter(obj);
   };
 
