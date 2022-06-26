@@ -37,21 +37,18 @@ const PostReview = ({ movieId, onSubmitForm }: Props) => {
         setHasError(false);
         clearForm();
         onSubmitForm();
-        toast.info("Avaliação enviada com sucesso!")
+        toast.info("Avaliação enviada com sucesso")
       })
       .catch((error) => {
         setHasError(true);
         clearForm();
         console.log("ERRO", error);
-        toast.error("Erro ao enviar a avaliação!")
+        toast.error("Erro ao publicar a review")
       });
   };
 
   return (
     <div className="base-card review-card">
-      {hasError && (
-        <div className="alert alert-danger">Erro ao publicar a review</div>
-      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
           <input

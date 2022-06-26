@@ -5,14 +5,18 @@ import "./styles.css";
 
 type Props = {
   movie: Movie;
+  cardStyle: String;
+  containerImageStyle: String;
 };
 
-const MovieCard = ({ movie }: Props) => {
+const MovieCard = ({ movie, cardStyle, containerImageStyle }: Props) => {
+  const imgStyle =
+    containerImageStyle == "container-movie-image-details" ? "img-width" : "";
   return (
-    <div className="movie-item-card container-movie">
-      <div className="container-movie-image">
+    <div className={`container-movie ${cardStyle}`}>
+      <div className={`${containerImageStyle}`}>
         <Link to={"/movies/" + movie.id}>
-          <img src={movie.imgUrl} alt={movie?.title} />
+          <img src={movie.imgUrl} alt={movie?.title} className={`${imgStyle}`} />
         </Link>
       </div>
       <div className="container-movie-details">

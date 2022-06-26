@@ -51,7 +51,13 @@ const MovieDetails = () => {
   return (
     <div className="movie-details-container">
       <div className="movie-details-item-container mt-4 mb-4">
-        {movieDetail && <MovieCard movie={movieDetail} />}
+        {movieDetail && (
+          <MovieCard
+            movie={movieDetail}
+            cardStyle={"movie-item-by-id-card"}
+            containerImageStyle={"container-movie-image-details"}
+          />
+        )}
       </div>
 
       {hasAnyRoles(["ROLE_MEMBER"]) && (
@@ -59,6 +65,7 @@ const MovieDetails = () => {
       )}
 
       {reviews && (
+        reviews.length > 0 &&
         <div className="base-card review-card mt-5">
           {reviews?.map((item) => (
             <UserReview key={item.id} review={item} />

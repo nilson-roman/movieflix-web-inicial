@@ -58,12 +58,16 @@ const List = () => {
   return (
     <>
       <div className="base-card filter-card">
-          <MovieFilter onSubmitFilter={handleSubmitFilter} />
+        <MovieFilter onSubmitFilter={handleSubmitFilter} />
       </div>
       <div className="row">
         {page?.content.map((movie) => (
           <div key={movie.id} className="col-sm-6 col-lg-3">
-            <MovieCard movie={movie} />
+            <MovieCard
+              movie={movie}
+              cardStyle={"movie-item-card"}
+              containerImageStyle={"container-movie-image"}
+            />
           </div>
         ))}
       </div>
